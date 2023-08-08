@@ -1,13 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native'
 import Deck from './Deck';
 
 class Home extends React.Component {
     render() {
+        
         return (
-            <View>
-                <Deck name="Test Deck" />
-            </View>
+            <div className="p-12 grid grid-cols-4 gap-4">
+                <Deck />
+
+            </div>
         )
     }
 }

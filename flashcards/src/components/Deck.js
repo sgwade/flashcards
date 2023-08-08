@@ -1,14 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import DeckHeader from './DeckHeader';
 
-
+// todo make clickable
 class Deck extends React.Component {
     render() {
+        const deck = this.props;
         return (
-            <TouchableOpacity>
-                <DeckHeader name="Gon" />
-            </TouchableOpacity>
+            <div className="h-64 w-48 pt-8 bg-purple-300 flex justify-center">
+                <DeckHeader decktitle={deck.title} />
+            </div>
         );
     }
 }

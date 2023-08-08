@@ -1,12 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
 
 //note: use tailwind
 const DeckHeader = ({ decktitle }) => {
     return (
-        <View>
-            <Text>{decktitle}</Text>
-        </View>
+        <div className="bg-ppink-300">
+            <div className="text-2xl font-bold">{decktitle}</div>
+        </div>
     )
 }
 export default DeckHeader;

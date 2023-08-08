@@ -27,7 +27,7 @@ let decks = {
     }
 }
 
-const formatDec = function(title) {
+const formatDeck = function(title) {
     return {
         [title]: {
             title,
@@ -64,12 +64,26 @@ const saveDeckTitle = function(title) {
 
 const addCardToDeck = function(title, card) {
     return new Promise((res, rej) => {
-        decks[title] !== undefined
-        ? decks[title] = {
-            ...decks[title],
-            "questions": decks[title].questions.concat([card]),
-        }
-        : rej(Error("Deck not found!!"));
+        setTimeout(() => {
+            decks[title] !== undefined
+              ? decks[title] = {
+                  ...decks[title],
+                  "questions": decks[title].questions.concat([card]),
+                }
+              : rej(Error("Deck not found!!"));
+          }, 500);
+    });
+}
+
+const removeDeck = function(title) {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            decks[title] !==undefined
+            ? rej(Error("Deck not found!!"))
+            : decks = {...decks},
+            delete decks[title],
+            res({...decks});
+        }, 500)
     })
 }
 
@@ -78,4 +92,5 @@ export {
     getDeck,
     saveDeckTitle,
     addCardToDeck,
+    removeDeck,
 };
