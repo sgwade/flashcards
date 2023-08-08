@@ -1,14 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import DeckHeader from './DeckHeader';
 
-function Deck(props) {
-    return (
-        <View>
+
+class Deck extends React.Component {
+    render() {
+        return (
             <TouchableOpacity>
-                <Text>{props.name}</Text>
+                <DeckHeader name="Gon" />
             </TouchableOpacity>
-        </View>
-    )
+        );
+    }
 }
 
 export default Deck;
